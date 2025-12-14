@@ -38,6 +38,9 @@ export default function HeroPage() {
   const headlineRef = useRef<HTMLHeadingElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
 
+  // Floating emoji decorations
+  const floatingEmojis = ['🔥', '💎', '⚡', '🌈', '✨', '💥', '🎮', '🕹️', '👾', '🎯', '🚀', '💫']
+
   // Unlock achievement system
   const unlockAchievement = (title: string, description: string) => {
     const newAchievement = {
@@ -289,7 +292,32 @@ export default function HeroPage() {
     <div
       ref={containerRef}
       className={`min-h-screen flex flex-col items-center justify-center px-4 relative overflow-hidden ${isInverted ? 'inverted-mode' : ''} ${discoMode ? 'disco-mode' : ''} ${earthquakeMode ? 'earthquake-mode' : ''}`}
+      style={{
+        background: `
+          radial-gradient(circle at 20% 80%, hsla(330, 100%, 50%, 0.2) 0%, transparent 50%),
+          radial-gradient(circle at 80% 20%, hsla(180, 100%, 50%, 0.2) 0%, transparent 50%),
+          radial-gradient(circle at 50% 50%, hsla(120, 100%, 50%, 0.1) 0%, transparent 50%)
+        `
+      }}
     >
+      {/* Floating decorative emojis */}
+      {floatingEmojis.map((emoji, i) => (
+        <div
+          key={`emoji-${i}`}
+          className="floating-meme"
+          style={{
+            left: `${(i * 8.33)}%`,
+            top: `${(i * 5) % 80}%`,
+            fontSize: '48px',
+            opacity: 0.3,
+            animationDelay: `${i * 0.5}s`,
+            animationDuration: `${4 + (i % 3)}s`
+          }}
+        >
+          {emoji}
+        </div>
+      ))}
+
       {/* Cursor trail */}
       {cursorTrail.map(trail => (
         <div
@@ -498,9 +526,31 @@ export default function HeroPage() {
 
       <div className="spacing-sm" />
 
+      {/* VIRAL MODE TOGGLE */}
+      <button
+        onClick={() => {
+          setDiscoMode(true)
+          setRainbowText(true)
+          setFireMode(true)
+          unlockAchievement('🔥 VIRAL MODE 🔥', 'You activated MAXIMUM CHAOS!')
+          spawnFloatingMeme('THIS IS WILD')
+          setTimeout(() => {
+            setDiscoMode(false)
+            setFireMode(false)
+          }, 5000)
+        }}
+        className="fixed top-4 left-4 px-6 py-3 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 text-white font-bold rounded-full neon-box hover:scale-110 transition-transform z-50"
+        style={{
+          textShadow: '0 0 10px rgba(255,255,255,0.8)',
+          boxShadow: '0 0 30px rgba(255,0,255,0.5), 0 0 60px rgba(0,255,255,0.3)'
+        }}
+      >
+        🚀 VIRAL MODE 🚀
+      </button>
+
       {/* Enhanced hint at the bottom */}
-      <div className="absolute bottom-4 text-xs text-muted-foreground opacity-20 hover:opacity-100 transition-opacity">
-        psst... try clicking the numbers • try the konami code • click 100 times for enlightenment
+      <div className="absolute bottom-4 text-xs text-muted-foreground opacity-20 hover:opacity-100 transition-opacity neon-text">
+        psst... try clicking the numbers • try the konami code • click 100 times for enlightenment • VIRAL MODE button top left
       </div>
 
       {/* Easter egg: Double-click anywhere */}

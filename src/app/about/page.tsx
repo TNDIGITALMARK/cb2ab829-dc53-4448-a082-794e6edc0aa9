@@ -26,19 +26,25 @@ export default function AboutPage() {
   }
 
   return (
-    <div className={`min-h-screen flex flex-col items-center justify-center px-4 ${isGlitching ? 'glitch-mode' : ''}`}>
+    <div className={`min-h-screen flex flex-col items-center justify-center px-4 relative ${isGlitching ? 'glitch-mode' : ''}`}>
+      {/* Floating meme decorations */}
+      <div className="fixed top-10 left-10 text-6xl float-slow opacity-30">🎮</div>
+      <div className="fixed top-20 right-20 text-6xl float-medium opacity-30">✨</div>
+      <div className="fixed bottom-20 left-20 text-6xl float-fast opacity-30">🚀</div>
+      <div className="fixed bottom-10 right-10 text-6xl float-slow opacity-30">💎</div>
+
       <div className="spacing-lg" />
 
       <div className="max-w-2xl w-full space-y-16">
         {/* Intentionally vague headline with double-click surprise */}
         <div className="animate-fade-in">
           <h1
-            className="text-center mb-8 cursor-pointer select-none hover:opacity-70 transition-opacity"
+            className="text-center mb-8 cursor-pointer select-none hover:scale-110 transition-all vaporwave"
             onDoubleClick={handleHeadlineDoubleClick}
           >
             {doubleClicked ? 'Still 6-7' : 'About 6-7'}
           </h1>
-          <h2 className="text-center text-muted-foreground">
+          <h2 className="text-center text-secondary neon-text">
             {doubleClicked ? 'Surprise! Nothing changed.' : 'An explanation that explains nothing.'}
           </h2>
         </div>
@@ -48,23 +54,23 @@ export default function AboutPage() {
         {/* Absurdist content sections with hover effects */}
         <div className="space-y-12 animate-fade-in">
           <div
-            className="hover-section"
+            className="hover-section neon-box p-6 border-pulse"
             onMouseEnter={() => setReadCount(prev => prev + 1)}
           >
-            <h3 className="mb-4 text-foreground">What is 6-7?</h3>
-            <p className="text-muted-foreground leading-relaxed">
+            <h3 className="mb-4 text-accent">What is 6-7?</h3>
+            <p className="text-foreground leading-relaxed">
               It's exactly what you think it is. Or maybe it isn't. The point is,
               if you're here, you already know. And if you don't know, well, that's
-              the point too. {readCount > 3 && '(Stop reading this over and over.)'}
+              the point too. {readCount > 3 && <span className="rainbow-text">(Stop reading this over and over.)</span>}
             </p>
           </div>
 
           <div className="spacing-xs" />
 
-          <div className="hover-section">
-            <h3 className="mb-4 text-foreground">Why 6-7?</h3>
+          <div className="hover-section neon-box p-6">
+            <h3 className="mb-4 text-primary">Why 6-7?</h3>
             <p
-              className="text-muted-foreground leading-relaxed cursor-help"
+              className="text-foreground leading-relaxed cursor-help"
               title="Seriously, why are you hovering?"
             >
               Why not? The numbers speak for themselves. Some say it's profound.
@@ -75,7 +81,7 @@ export default function AboutPage() {
           <div className="spacing-xs" />
 
           <div
-            className="hover-section"
+            className="hover-section neon-box p-6 bounce"
             onDoubleClick={(e) => {
               e.currentTarget.style.transform = 'rotate(180deg)'
               setTimeout(() => {
@@ -84,19 +90,19 @@ export default function AboutPage() {
             }}
             style={{ transition: 'transform 1s ease' }}
           >
-            <h3 className="mb-4 text-foreground">Who is this for?</h3>
-            <p className="text-muted-foreground leading-relaxed">
+            <h3 className="mb-4 text-secondary">Who is this for?</h3>
+            <p className="text-foreground leading-relaxed">
               People who get it. Internet natives. Meme scholars. Those who
               appreciate commitment to a bit. Anyone who has ever said "if you know,
-              you know" unironically. <span className="text-xs opacity-50">(Try double-clicking this section)</span>
+              you know" unironically. <span className="text-xs opacity-70 text-accent">(Try double-clicking this section)</span>
             </p>
           </div>
 
           <div className="spacing-xs" />
 
-          <div className="hover-section">
-            <h3 className="mb-4 text-foreground">What happens next?</h3>
-            <p className="text-muted-foreground leading-relaxed">
+          <div className="hover-section neon-box p-6">
+            <h3 className="mb-4 text-accent">What happens next?</h3>
+            <p className="text-foreground leading-relaxed">
               Nothing. Everything. We're building something that is intentionally
               pointless yet perfectly executed. It's art. It's comedy. It's 6-7.
             </p>
@@ -104,9 +110,9 @@ export default function AboutPage() {
 
           {/* Hidden revelation after reading many times */}
           {readCount > 10 && (
-            <div className="animate-fade-in border-2 border-foreground p-8 text-center">
-              <h3 className="mb-4 text-foreground">The Truth</h3>
-              <p className="text-muted-foreground leading-relaxed">
+            <div className="animate-fade-in neon-box p-8 text-center holographic">
+              <h3 className="mb-4 text-yellow-300 font-bold text-2xl">🏆 The Truth 🏆</h3>
+              <p className="text-white leading-relaxed font-bold">
                 You've hovered over these sections {readCount} times. That dedication
                 deserves recognition. The truth is: there is no truth. 6-7 is whatever
                 you want it to be. It's performance art. It's a social experiment. It's

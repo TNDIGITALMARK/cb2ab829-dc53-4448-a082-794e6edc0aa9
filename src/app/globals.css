@@ -1,51 +1,52 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Comic+Neue:wght@400;700&family=Inter:wght@400;600;800;900&display=swap');
 
 /* ============================================
-   6-7 MEME LANDING PAGE DESIGN SYSTEM
-   Intentionally absurd minimalism with perfect execution
-   Pure black/white, massive typography, exaggerated spacing
+   6-7 ULTRA VIRAL MEME LANDING PAGE
+   MAXIMUM CHAOS - Wild colors, retro vibes, TikTok energy
+   THIS IS INTERNET CULTURE PERSONIFIED
    ============================================ */
 
 :root {
-  /* STARK MINIMALISM: Pure white background with absolute black text */
-  --background: 0 0% 100%;
-  --foreground: 0 0% 0%;
+  /* 🌈 WILD COLOR EXPLOSION - Maximum viral energy */
+  --background: 280 100% 8%;  /* Deep electric purple */
+  --foreground: 60 100% 50%;  /* Neon yellow text */
 
-  /* Cards maintain the pure aesthetic */
-  --card: 0 0% 100%;
-  --card-foreground: 0 0% 0%;
+  /* Cards get the glow treatment */
+  --card: 330 100% 15%;  /* Hot pink undertone */
+  --card-foreground: 180 100% 50%;  /* Cyan glow */
 
-  /* Popovers: barely-there */
-  --popover: 0 0% 100%;
-  --popover-foreground: 0 0% 0%;
+  /* Popovers: Retro gaming vibes */
+  --popover: 0 0% 5%;
+  --popover-foreground: 120 100% 50%;  /* Lime green */
 
-  /* Primary: ABSOLUTE BLACK - the star of the show */
-  --primary: 0 0% 0%;
-  --primary-foreground: 0 0% 100%;
+  /* Primary: HOT PINK - Pure internet energy */
+  --primary: 330 100% 50%;  /* Hot pink */
+  --primary-foreground: 60 100% 95%;  /* Light yellow */
 
-  /* Secondary: Subtle gray for hover states */
-  --secondary: 0 0% 20%;
-  --secondary-foreground: 0 0% 100%;
+  /* Secondary: ELECTRIC CYAN - Vaporwave dreams */
+  --secondary: 180 100% 45%;  /* Cyan */
+  --secondary-foreground: 330 100% 10%;  /* Dark pink */
 
-  /* Muted: Barely-there gray for subtle elements */
-  --muted: 0 0% 96%;
-  --muted-foreground: 0 0% 50%;
+  /* Muted: Neon purple undertones */
+  --muted: 280 60% 20%;
+  --muted-foreground: 280 30% 70%;
 
-  /* Accent: Pure gray - minimal but present */
-  --accent: 0 0% 15%;
-  --accent-foreground: 0 0% 100%;
+  /* Accent: LIME GREEN - Maximum contrast */
+  --accent: 120 100% 50%;  /* Lime green */
+  --accent-foreground: 280 100% 10%;
 
-  /* Destructive: Minimal red (barely used in this aesthetic) */
-  --destructive: 0 70% 50%;
+  /* Destructive: ORANGE EXPLOSION */
+  --destructive: 20 100% 55%;  /* Bright orange */
   --destructive-foreground: 0 0% 100%;
 
-  /* Borders: Nearly invisible */
-  --border: 0 0% 92%;
-  --input: 0 0% 88%;
-  --ring: 0 0% 0%;
+  /* Borders: Glowing neon */
+  --border: 300 100% 50%;  /* Magenta */
+  --input: 280 80% 25%;
+  --ring: 60 100% 50%;  /* Yellow ring */
 
-  /* No rounded corners - stark rectangles only */
-  --radius: 0rem;
+  /* ROUNDED EVERYTHING - Bubbly internet aesthetic */
+  --radius: 1.5rem;
 
   /* Spacing system for absurdist layout */
   --spacing-xs: 40px;
@@ -60,55 +61,66 @@
   --text-body: clamp(18px, 2vw, 24px);
   --text-small: clamp(14px, 1.5vw, 18px);
 
-  /* Sidebar (if ever needed - maintained for consistency) */
-  --sidebar-background: 0 0% 100%;
-  --sidebar-foreground: 0 0% 0%;
-  --sidebar-primary: 0 0% 0%;
-  --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 0 0% 96%;
-  --sidebar-accent-foreground: 0 0% 0%;
-  --sidebar-border: 0 0% 92%;
-  --sidebar-ring: 0 0% 0%;
+  /* Sidebar: Retro gaming console vibes */
+  --sidebar-background: 280 100% 12%;
+  --sidebar-foreground: 60 100% 50%;
+  --sidebar-primary: 330 100% 50%;
+  --sidebar-primary-foreground: 60 100% 95%;
+  --sidebar-accent: 180 100% 45%;
+  --sidebar-accent-foreground: 280 100% 10%;
+  --sidebar-border: 300 100% 50%;
+  --sidebar-ring: 60 100% 50%;
+
+  /* 🎨 CUSTOM FONT VARIABLES */
+  --font-primary: 'Comic Neue', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Press Start 2P', 'Comic Neue', cursive;
+  --font-mono: 'Press Start 2P', 'Courier New', monospace;
+
+  /* 💫 GLOW EFFECTS */
+  --glow-pink: 0 0 20px hsl(330 100% 50%), 0 0 40px hsl(330 100% 50%);
+  --glow-cyan: 0 0 20px hsl(180 100% 50%), 0 0 40px hsl(180 100% 50%);
+  --glow-yellow: 0 0 20px hsl(60 100% 50%), 0 0 40px hsl(60 100% 50%);
+  --glow-green: 0 0 20px hsl(120 100% 50%), 0 0 40px hsl(120 100% 50%);
 }
 
-/* DARK MODE: Pure black background, absolute white text */
+/* 🌙 DARK MODE: Even MORE neon madness */
 .dark {
-  --background: 0 0% 0%;
-  --foreground: 0 0% 100%;
+  --background: 0 0% 3%;  /* Nearly black for maximum neon pop */
+  --foreground: 60 100% 60%;  /* Brighter yellow */
 
-  --card: 0 0% 0%;
-  --card-foreground: 0 0% 100%;
+  --card: 280 100% 8%;
+  --card-foreground: 180 100% 60%;
 
-  --popover: 0 0% 0%;
-  --popover-foreground: 0 0% 100%;
+  --popover: 0 0% 2%;
+  --popover-foreground: 120 100% 60%;
 
-  --primary: 0 0% 100%;
-  --primary-foreground: 0 0% 0%;
+  --primary: 330 100% 60%;  /* Even brighter pink */
+  --primary-foreground: 60 100% 98%;
 
-  --secondary: 0 0% 85%;
-  --secondary-foreground: 0 0% 0%;
+  --secondary: 180 100% 55%;  /* Brighter cyan */
+  --secondary-foreground: 280 100% 5%;
 
-  --muted: 0 0% 10%;
-  --muted-foreground: 0 0% 50%;
+  --muted: 280 50% 15%;
+  --muted-foreground: 280 20% 65%;
 
-  --accent: 0 0% 90%;
-  --accent-foreground: 0 0% 0%;
+  --accent: 120 100% 60%;  /* Brighter lime */
+  --accent-foreground: 280 100% 5%;
 
-  --destructive: 0 70% 50%;
+  --destructive: 20 100% 60%;
   --destructive-foreground: 0 0% 100%;
 
-  --border: 0 0% 15%;
-  --input: 0 0% 20%;
-  --ring: 0 0% 100%;
+  --border: 300 100% 60%;  /* Bright magenta */
+  --input: 280 70% 20%;
+  --ring: 60 100% 60%;
 
-  --sidebar-background: 0 0% 0%;
-  --sidebar-foreground: 0 0% 100%;
-  --sidebar-primary: 0 0% 100%;
-  --sidebar-primary-foreground: 0 0% 0%;
-  --sidebar-accent: 0 0% 10%;
-  --sidebar-accent-foreground: 0 0% 100%;
-  --sidebar-border: 0 0% 15%;
-  --sidebar-ring: 0 0% 100%;
+  --sidebar-background: 280 100% 5%;
+  --sidebar-foreground: 60 100% 60%;
+  --sidebar-primary: 330 100% 60%;
+  --sidebar-primary-foreground: 60 100% 98%;
+  --sidebar-accent: 180 100% 55%;
+  --sidebar-accent-foreground: 280 100% 5%;
+  --sidebar-border: 300 100% 60%;
+  --sidebar-ring: 60 100% 60%;
 }
 
 @theme {
@@ -201,14 +213,20 @@ html {
 }
 
 body {
-  background-color: hsl(var(--background));
+  background: linear-gradient(135deg,
+    hsl(var(--background)) 0%,
+    hsl(280 100% 12%) 50%,
+    hsl(330 100% 15%) 100%
+  );
+  background-attachment: fixed;
   color: hsl(var(--foreground));
-  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  font-family: var(--font-primary);
   font-size: var(--text-body);
   line-height: 1.6;
   font-feature-settings: "rlig" 1, "calt" 1;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
+  text-shadow: 0 0 10px currentColor;
 }
 
 /* ============================================
@@ -223,33 +241,47 @@ h1 {
   line-height: 0.9;
   color: hsl(var(--foreground));
   margin: 0;
+  font-family: var(--font-heading);
+  text-shadow: var(--glow-yellow),
+    3px 3px 0 hsl(var(--primary)),
+    6px 6px 0 hsl(var(--secondary));
+  animation: titlePulse 3s ease-in-out infinite;
+}
+
+@keyframes titlePulse {
+  0%, 100% { text-shadow: var(--glow-yellow), 3px 3px 0 hsl(var(--primary)), 6px 6px 0 hsl(var(--secondary)); }
+  50% { text-shadow: var(--glow-pink), 5px 5px 0 hsl(var(--secondary)), 10px 10px 0 hsl(var(--accent)); }
 }
 
 h2 {
   font-size: var(--text-subhero);
-  font-weight: 500;
-  letter-spacing: -0.02em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
   line-height: 1.2;
-  color: hsl(var(--foreground));
+  color: hsl(var(--secondary));
   margin: 0;
+  font-family: var(--font-primary);
+  text-shadow: 0 0 15px currentColor;
 }
 
 h3 {
   font-size: var(--text-body);
-  font-weight: 500;
-  letter-spacing: -0.01em;
+  font-weight: 700;
+  letter-spacing: 0.01em;
   line-height: 1.4;
-  color: hsl(var(--foreground));
+  color: hsl(var(--accent));
   margin: 0;
+  text-shadow: 0 0 10px currentColor;
 }
 
 h4, h5, h6 {
   font-size: var(--text-small);
-  font-weight: 500;
-  letter-spacing: 0;
+  font-weight: 700;
+  letter-spacing: 0.05em;
   line-height: 1.5;
-  color: hsl(var(--muted-foreground));
+  color: hsl(var(--primary));
   margin: 0;
+  text-transform: uppercase;
 }
 
 p {
@@ -261,13 +293,17 @@ p {
 }
 
 a {
-  color: hsl(var(--foreground));
+  color: hsl(var(--primary));
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: all 0.3s ease;
+  font-weight: 700;
+  text-shadow: 0 0 10px currentColor;
 }
 
 a:hover {
-  color: hsl(var(--muted-foreground));
+  color: hsl(var(--accent));
+  text-shadow: var(--glow-green);
+  transform: scale(1.1);
 }
 
 /* ============================================
@@ -276,41 +312,67 @@ a:hover {
    ============================================ */
 
 button {
-  font-family: inherit;
+  font-family: var(--font-primary);
   font-size: var(--text-body);
-  font-weight: 500;
-  letter-spacing: -0.01em;
+  font-weight: 700;
+  letter-spacing: 0.05em;
   cursor: pointer;
-  border: none;
-  background: none;
-  transition: all 0.2s ease;
+  border: 3px solid hsl(var(--border));
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+  color: hsl(var(--primary-foreground));
+  transition: all 0.3s ease;
+  border-radius: var(--radius);
+  box-shadow: 0 0 20px hsla(var(--primary), 0.5),
+    0 5px 0 hsl(var(--accent));
+  text-transform: uppercase;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 30px hsla(var(--accent), 0.8),
+    0 8px 0 hsl(var(--primary));
+}
+
+button:active {
+  transform: translateY(2px);
+  box-shadow: 0 0 10px hsla(var(--primary), 0.5),
+    0 2px 0 hsl(var(--accent));
 }
 
 button:focus-visible {
-  outline: 2px solid hsl(var(--ring));
-  outline-offset: 2px;
+  outline: 3px solid hsl(var(--ring));
+  outline-offset: 4px;
+  box-shadow: var(--glow-yellow);
 }
 
 input,
 textarea {
-  font-family: inherit;
+  font-family: var(--font-primary);
   font-size: var(--text-body);
   color: hsl(var(--foreground));
-  background-color: hsl(var(--background));
-  border: 2px solid hsl(var(--input));
-  transition: border-color 0.2s ease;
+  background-color: hsl(var(--input));
+  border: 3px solid hsl(var(--border));
+  transition: all 0.3s ease;
+  border-radius: var(--radius);
+  padding: 1rem;
+  text-shadow: 0 0 5px currentColor;
 }
 
 input:focus,
 textarea:focus {
   outline: none;
   border-color: hsl(var(--ring));
+  box-shadow: var(--glow-yellow),
+    0 0 0 3px hsla(var(--ring), 0.2);
+  transform: scale(1.02);
 }
 
 input::placeholder,
 textarea::placeholder {
   color: hsl(var(--muted-foreground));
-  opacity: 0.6;
+  opacity: 0.8;
+  font-style: italic;
 }
 
 /* ============================================
@@ -339,15 +401,29 @@ textarea::placeholder {
 }
 
 /* ============================================
-   NO SHADOWS - Pure flatness
-   Intentionally 2D, anti-depth
+   WILD SHADOWS - Maximum depth and glow
+   3D layered effects everywhere
    ============================================ */
 
-.shadow-sm,
-.shadow,
-.shadow-md,
+.shadow-sm {
+  box-shadow: 0 2px 4px hsla(var(--primary), 0.3);
+}
+
+.shadow {
+  box-shadow: 0 4px 8px hsla(var(--primary), 0.4),
+    0 0 15px hsla(var(--secondary), 0.2);
+}
+
+.shadow-md {
+  box-shadow: 0 6px 12px hsla(var(--primary), 0.5),
+    0 0 20px hsla(var(--secondary), 0.3),
+    0 0 30px hsla(var(--accent), 0.1);
+}
+
 .shadow-lg {
-  box-shadow: none;
+  box-shadow: 0 10px 20px hsla(var(--primary), 0.6),
+    0 0 30px hsla(var(--secondary), 0.4),
+    0 0 50px hsla(var(--accent), 0.2);
 }
 
 /* ============================================
@@ -443,15 +519,70 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Selection styling - maintaining the stark aesthetic */
+/* Selection styling - NEON GLOW */
 ::selection {
-  background-color: hsl(var(--foreground));
-  color: hsl(var(--background));
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  text-shadow: var(--glow-pink);
 }
 
 ::-moz-selection {
-  background-color: hsl(var(--foreground));
-  color: hsl(var(--background));
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  text-shadow: var(--glow-pink);
+}
+
+/* ============================================
+   ANIMATED BACKGROUND PATTERNS
+   Viral-worthy moving elements
+   ============================================ */
+
+@keyframes floatingShapes {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(20px, -20px) rotate(90deg); }
+  50% { transform: translate(0, -40px) rotate(180deg); }
+  75% { transform: translate(-20px, -20px) rotate(270deg); }
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background:
+    radial-gradient(circle at 20% 30%, hsla(var(--primary), 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, hsla(var(--secondary), 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, hsla(var(--accent), 0.05) 0%, transparent 50%);
+  animation: floatingShapes 20s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      hsla(var(--border), 0.03) 2px,
+      hsla(var(--border), 0.03) 4px
+    );
+  pointer-events: none;
+  z-index: -1;
+  animation: scanlines 10s linear infinite;
+}
+
+@keyframes scanlines {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(100px); }
 }
 
 /* ============================================
@@ -1293,4 +1424,292 @@ html {
   textarea {
     border-width: 2px;
   }
+}
+/* ============================================
+   ULTRA VIRAL ADDITIONAL EFFECTS
+   Maximum memeable energy
+   ============================================ */
+
+/* Glowing border pulse animation */
+@keyframes borderPulse {
+  0%, 100% {
+    border-color: hsl(var(--primary));
+    box-shadow: 0 0 20px hsla(var(--primary), 0.5);
+  }
+  33% {
+    border-color: hsl(var(--secondary));
+    box-shadow: 0 0 20px hsla(var(--secondary), 0.5);
+  }
+  66% {
+    border-color: hsl(var(--accent));
+    box-shadow: 0 0 20px hsla(var(--accent), 0.5);
+  }
+}
+
+.border-pulse {
+  animation: borderPulse 3s ease-in-out infinite;
+}
+
+/* Neon text effect */
+.neon-text {
+  text-shadow:
+    0 0 10px currentColor,
+    0 0 20px currentColor,
+    0 0 30px currentColor,
+    0 0 40px currentColor;
+  animation: neonFlicker 4s ease-in-out infinite;
+}
+
+@keyframes neonFlicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+  75% { opacity: 0.9; }
+}
+
+/* Retro scanline effect */
+.retro-scanlines::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  animation: scanlineMove 10s linear infinite;
+}
+
+@keyframes scanlineMove {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(100%); }
+}
+
+/* Glitch text effect */
+.glitch-text {
+  position: relative;
+  animation: glitch 5s infinite;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch-text::before {
+  left: 2px;
+  text-shadow: -2px 0 hsl(var(--primary));
+  clip: rect(24px, 550px, 90px, 0);
+  animation: glitch-anim 3s infinite linear alternate-reverse;
+}
+
+.glitch-text::after {
+  left: -2px;
+  text-shadow: -2px 0 hsl(var(--secondary));
+  clip: rect(85px, 550px, 140px, 0);
+  animation: glitch-anim 2s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+  0% { clip: rect(random(100) + px, 9999px, random(100) + px, 0); }
+  100% { clip: rect(random(100) + px, 9999px, random(100) + px, 0); }
+}
+
+/* Bouncing animation */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.bounce {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+/* Spin animation */
+@keyframes spin360 {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spin-slow {
+  animation: spin360 10s linear infinite;
+}
+
+/* Wiggle animation */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+
+.wiggle {
+  animation: wiggle 1s ease-in-out infinite;
+}
+
+/* Color shift animation */
+@keyframes colorShift {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+.color-shift {
+  animation: colorShift 10s linear infinite;
+}
+
+/* Pixel perfect retro button */
+.retro-button {
+  background: hsl(var(--primary));
+  border: 4px solid hsl(var(--foreground));
+  box-shadow:
+    4px 4px 0 hsl(var(--accent)),
+    8px 8px 0 hsl(var(--secondary));
+  transition: all 0.1s;
+  image-rendering: pixelated;
+}
+
+.retro-button:hover {
+  transform: translate(2px, 2px);
+  box-shadow:
+    2px 2px 0 hsl(var(--accent)),
+    4px 4px 0 hsl(var(--secondary));
+}
+
+.retro-button:active {
+  transform: translate(4px, 4px);
+  box-shadow: none;
+}
+
+/* Vaporwave aesthetic */
+.vaporwave {
+  background: linear-gradient(
+    135deg,
+    hsl(330 100% 50%) 0%,
+    hsl(280 100% 50%) 50%,
+    hsl(180 100% 50%) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: vaporwaveShift 5s ease-in-out infinite;
+}
+
+@keyframes vaporwaveShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Holographic effect */
+.holographic {
+  background: linear-gradient(
+    45deg,
+    hsl(var(--primary)) 0%,
+    hsl(var(--secondary)) 25%,
+    hsl(var(--accent)) 50%,
+    hsl(var(--secondary)) 75%,
+    hsl(var(--primary)) 100%
+  );
+  background-size: 200% 200%;
+  animation: holographicShine 3s ease-in-out infinite;
+}
+
+@keyframes holographicShine {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Star burst effect */
+@keyframes starBurst {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.star-burst {
+  animation: starBurst 1s ease-out forwards;
+}
+
+/* Neon box */
+.neon-box {
+  border: 3px solid hsl(var(--primary));
+  box-shadow:
+    inset 0 0 20px hsla(var(--primary), 0.3),
+    inset 0 0 40px hsla(var(--secondary), 0.2),
+    0 0 20px hsla(var(--primary), 0.5),
+    0 0 40px hsla(var(--secondary), 0.3);
+  background: hsla(var(--background), 0.5);
+  backdrop-filter: blur(10px);
+}
+
+/* Floating animation variants */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-30px); }
+}
+
+@keyframes floatMedium {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes floatFast {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.float-slow { animation: floatSlow 6s ease-in-out infinite; }
+.float-medium { animation: floatMedium 4s ease-in-out infinite; }
+.float-fast { animation: floatFast 2s ease-in-out infinite; }
+
+/* Pixel art scale */
+.pixelated {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* CRT monitor effect */
+.crt-effect {
+  animation: crtFlicker 0.15s infinite;
+}
+
+@keyframes crtFlicker {
+  0% { opacity: 0.97; }
+  50% { opacity: 1; }
+  100% { opacity: 0.97; }
+}
+
+/* Synthwave grid */
+.synthwave-grid {
+  background-image:
+    linear-gradient(hsl(var(--primary)) 2px, transparent 2px),
+    linear-gradient(90deg, hsl(var(--primary)) 2px, transparent 2px);
+  background-size: 50px 50px;
+  background-position: -2px -2px;
+}
+
+/* Retro gaming cursor */
+body {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><text y="20" font-size="20">👾</text></svg>'), auto;
+}
+
+button, a, input {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><text y="20" font-size="20">👉</text></svg>'), pointer;
 }
