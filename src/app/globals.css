@@ -914,6 +914,352 @@ html {
 }
 
 /* ============================================
+   NEXT-LEVEL CHAOS EFFECTS - VIRAL WORTHY
+   Maximum meme energy, TikTok-ready animations
+   ============================================ */
+
+/* MATRIX MODE - Digital rain effect */
+@keyframes matrixRain {
+  0% {
+    transform: translateY(-100vh);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+.matrix-mode {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  color: #0f0;
+  font-family: var(--font-geist-mono);
+  z-index: 99999;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.matrix-char {
+  position: absolute;
+  font-size: 20px;
+  animation: matrixRain 3s linear infinite;
+  opacity: 0.8;
+}
+
+/* DISCO MODE - Flashing colors */
+@keyframes discoFlash {
+  0% { background: #ff00ff; color: #00ff00; }
+  16% { background: #00ff00; color: #ff0000; }
+  33% { background: #ff0000; color: #0000ff; }
+  50% { background: #0000ff; color: #ffff00; }
+  66% { background: #ffff00; color: #ff00ff; }
+  83% { background: #00ffff; color: #ff0000; }
+  100% { background: #ff00ff; color: #00ff00; }
+}
+
+.disco-mode {
+  animation: discoFlash 0.3s infinite;
+}
+
+/* EARTHQUAKE MODE - Violent screen shake */
+@keyframes earthquake {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  10% { transform: translate(-15px, 10px) rotate(-3deg); }
+  20% { transform: translate(15px, -15px) rotate(3deg); }
+  30% { transform: translate(-10px, -10px) rotate(-2deg); }
+  40% { transform: translate(10px, 15px) rotate(2deg); }
+  50% { transform: translate(-20px, 5px) rotate(-4deg); }
+  60% { transform: translate(20px, -10px) rotate(4deg); }
+  70% { transform: translate(-15px, -5px) rotate(-3deg); }
+  80% { transform: translate(10px, 10px) rotate(3deg); }
+  90% { transform: translate(-5px, 15px) rotate(-1deg); }
+}
+
+.earthquake-mode {
+  animation: earthquake 0.5s infinite;
+}
+
+/* FLOATING MEME - Drifting text that follows cursor */
+.floating-meme {
+  position: fixed;
+  font-size: 48px;
+  font-weight: 900;
+  pointer-events: none;
+  z-index: 9999;
+  transition: all 0.3s ease-out;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: floatDrift 4s ease-in-out infinite;
+}
+
+@keyframes floatDrift {
+  0%, 100% { transform: translateY(0px) rotate(-5deg); }
+  25% { transform: translateY(-20px) rotate(5deg); }
+  50% { transform: translateY(-10px) rotate(-3deg); }
+  75% { transform: translateY(-25px) rotate(3deg); }
+}
+
+/* EXPLOSION MODE - Screen goes nuclear */
+@keyframes nuclearExplosion {
+  0% {
+    transform: scale(1);
+    filter: brightness(1) blur(0px);
+    opacity: 1;
+  }
+  30% {
+    transform: scale(1.5);
+    filter: brightness(10) blur(5px);
+    opacity: 1;
+  }
+  60% {
+    transform: scale(2);
+    filter: brightness(20) blur(10px);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(3);
+    filter: brightness(0) blur(20px);
+    opacity: 0;
+  }
+}
+
+.explosion-mode {
+  animation: nuclearExplosion 2s ease-out;
+}
+
+/* RAINBOW TEXT - Cycling colors */
+@keyframes rainbowText {
+  0% { color: #ff0000; }
+  16% { color: #ff8800; }
+  33% { color: #ffff00; }
+  50% { color: #00ff00; }
+  66% { color: #0088ff; }
+  83% { color: #8800ff; }
+  100% { color: #ff0000; }
+}
+
+.rainbow-text {
+  animation: rainbowText 2s linear infinite;
+}
+
+/* WAVE TEXT - Letters wave up and down */
+@keyframes wave {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.wave-text span {
+  display: inline-block;
+  animation: wave 1s ease-in-out infinite;
+}
+
+.wave-text span:nth-child(1) { animation-delay: 0s; }
+.wave-text span:nth-child(2) { animation-delay: 0.1s; }
+.wave-text span:nth-child(3) { animation-delay: 0.2s; }
+.wave-text span:nth-child(4) { animation-delay: 0.3s; }
+.wave-text span:nth-child(5) { animation-delay: 0.4s; }
+
+/* ACHIEVEMENT NOTIFICATION - Gamification popup */
+.achievement {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: hsl(var(--foreground));
+  color: hsl(var(--background));
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  z-index: 10000;
+  animation: achievementSlide 0.5s ease-out, achievementShake 0.3s ease-in-out 0.5s;
+  font-family: var(--font-geist-mono);
+  font-weight: 700;
+}
+
+@keyframes achievementSlide {
+  0% {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes achievementShake {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+}
+
+/* SCREEN GLITCH - TV static effect */
+@keyframes screenGlitch {
+  0% {
+    background-position: 0 0, 0 0;
+    filter: hue-rotate(0deg);
+  }
+  20% {
+    background-position: -5px 5px, 5px -5px;
+    filter: hue-rotate(90deg);
+  }
+  40% {
+    background-position: 5px -5px, -5px 5px;
+    filter: hue-rotate(180deg);
+  }
+  60% {
+    background-position: -10px -10px, 10px 10px;
+    filter: hue-rotate(270deg);
+  }
+  80% {
+    background-position: 10px 10px, -10px -10px;
+    filter: hue-rotate(360deg);
+  }
+  100% {
+    background-position: 0 0, 0 0;
+    filter: hue-rotate(0deg);
+  }
+}
+
+.screen-glitch {
+  animation: screenGlitch 0.3s infinite;
+}
+
+/* ZOOM MEETING CHAOS - Multiple overlapping faces */
+.zoom-chaos {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+  padding: 10px;
+  background: #000;
+  z-index: 99998;
+  pointer-events: none;
+}
+
+.zoom-face {
+  background: hsl(var(--muted));
+  border: 2px solid hsl(var(--border));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  animation: zoomFlicker 0.5s infinite;
+}
+
+@keyframes zoomFlicker {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(0.95); }
+}
+
+/* TYPING INDICATOR - Animated dots */
+.typing-indicator {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.typing-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: hsl(var(--foreground));
+  animation: typingBounce 1.4s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(1) { animation-delay: 0s; }
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typingBounce {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  30% {
+    transform: translateY(-15px);
+    opacity: 0.7;
+  }
+}
+
+/* COMBO COUNTER - Fighting game style */
+.combo-counter {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 120px;
+  font-weight: 900;
+  font-family: var(--font-geist-mono);
+  color: hsl(var(--foreground));
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+  z-index: 10001;
+  pointer-events: none;
+  animation: comboAppear 0.5s ease-out;
+}
+
+@keyframes comboAppear {
+  0% {
+    transform: translate(-50%, -50%) scale(0) rotate(-180deg);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.3) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+/* FIRE EFFECT - Flames at bottom of screen */
+@keyframes fireFlicker {
+  0%, 100% {
+    transform: scaleY(1) scaleX(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scaleY(1.2) scaleX(0.9);
+    opacity: 1;
+  }
+}
+
+.fire-effect {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(to top, #ff4500, #ff8c00, transparent);
+  z-index: 99999;
+  pointer-events: none;
+  animation: fireFlicker 0.3s infinite alternate;
+  filter: blur(20px);
+}
+
+/* GRAVITY FLIP - Elements fall upward */
+@keyframes gravityFlip {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-2000px) rotate(720deg);
+  }
+}
+
+.gravity-flip {
+  animation: gravityFlip 3s ease-in forwards;
+}
+
+/* ============================================
    ACCESSIBILITY ENHANCEMENTS
    ============================================ */
 
