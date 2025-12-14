@@ -455,6 +455,392 @@ html {
 }
 
 /* ============================================
+   MEMEABLE CHAOS ANIMATIONS - TikTok Worthy
+   Absurd, attention-grabbing, viral-ready
+   ============================================ */
+
+/* Headline interactive effects */
+.headline-interactive {
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  will-change: transform;
+}
+
+/* SHAKE CRAZY - Aggressive vibration */
+@keyframes shakeCrazy {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  10% { transform: translate(-10px, 5px) rotate(-2deg); }
+  20% { transform: translate(10px, -5px) rotate(2deg); }
+  30% { transform: translate(-8px, -8px) rotate(-1deg); }
+  40% { transform: translate(8px, 8px) rotate(1deg); }
+  50% { transform: translate(-12px, 3px) rotate(-3deg); }
+  60% { transform: translate(12px, -3px) rotate(3deg); }
+  70% { transform: translate(-6px, -6px) rotate(-2deg); }
+  80% { transform: translate(6px, 6px) rotate(2deg); }
+  90% { transform: translate(-4px, 2px) rotate(-1deg); }
+}
+
+.shake-crazy {
+  animation: shakeCrazy 0.5s ease-in-out;
+}
+
+/* ROTATE CHAOS - Spinning madness */
+@keyframes rotateChaos {
+  0% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(90deg) scale(1.2); }
+  50% { transform: rotate(180deg) scale(0.8); }
+  75% { transform: rotate(270deg) scale(1.1); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+.rotate-chaos {
+  animation: rotateChaos 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* INVERTED MODE - Screen flip */
+.inverted-mode {
+  filter: invert(1) hue-rotate(180deg);
+  transition: filter 0.5s ease;
+}
+
+/* Click counter display */
+.click-counter {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 16px;
+  background: hsl(var(--foreground));
+  color: hsl(var(--background));
+  border-radius: 20px;
+  z-index: 9999;
+  pointer-events: none;
+  font-family: var(--font-geist-mono);
+}
+
+/* Secret message */
+@keyframes secretAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(-180deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5) rotate(180deg);
+  }
+}
+
+.secret-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 120px;
+  font-weight: 900;
+  z-index: 10000;
+  pointer-events: none;
+  animation: secretAppear 3s ease-in-out forwards;
+  color: hsl(var(--foreground));
+}
+
+/* Particle explosion system */
+@keyframes particleExplosion {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--tx), var(--ty)) scale(0);
+  }
+}
+
+.particle {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: hsl(var(--foreground));
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  animation: particleExplosion 1s ease-out forwards;
+  --tx: calc((random() * 200) - 100px);
+  --ty: calc((random() * 200) - 100px);
+}
+
+/* Generate random particle directions */
+.particle:nth-child(1) { --tx: -80px; --ty: -120px; }
+.particle:nth-child(2) { --tx: 100px; --ty: -80px; }
+.particle:nth-child(3) { --tx: -120px; --ty: 60px; }
+.particle:nth-child(4) { --tx: 80px; --ty: 100px; }
+.particle:nth-child(5) { --tx: -60px; --ty: -90px; }
+.particle:nth-child(6) { --tx: 90px; --ty: -60px; }
+.particle:nth-child(7) { --tx: -100px; --ty: 80px; }
+.particle:nth-child(8) { --tx: 60px; --ty: 90px; }
+.particle:nth-child(9) { --tx: -70px; --ty: -100px; }
+.particle:nth-child(10) { --tx: 110px; --ty: -70px; }
+.particle:nth-child(11) { --tx: -90px; --ty: 70px; }
+.particle:nth-child(12) { --tx: 70px; --ty: 110px; }
+.particle:nth-child(13) { --tx: -50px; --ty: -110px; }
+.particle:nth-child(14) { --tx: 120px; --ty: -50px; }
+.particle:nth-child(15) { --tx: -110px; --ty: 50px; }
+.particle:nth-child(16) { --tx: 50px; --ty: 120px; }
+.particle:nth-child(17) { --tx: -85px; --ty: -95px; }
+.particle:nth-child(18) { --tx: 95px; --ty: -85px; }
+.particle:nth-child(19) { --tx: -95px; --ty: 85px; }
+.particle:nth-child(20) { --tx: 85px; --ty: 95px; }
+
+/* Cursor trail effect */
+@keyframes cursorFade {
+  0% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+}
+
+.cursor-trail {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: hsl(var(--foreground));
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9997;
+  transform: translate(-50%, -50%);
+  animation: cursorFade 0.5s ease-out forwards;
+}
+
+/* Subheading hover effect */
+.subheading-hover {
+  transition: all 0.3s ease;
+}
+
+.subheading-hover:hover {
+  font-style: italic;
+  letter-spacing: 0.05em;
+}
+
+/* Input chaos effects */
+@keyframes inputGlow {
+  0%, 100% {
+    box-shadow: 0 0 5px hsla(var(--ring), 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px hsla(var(--ring), 0.6);
+  }
+}
+
+.input-chaos:focus {
+  animation: inputGlow 2s ease-in-out infinite;
+}
+
+/* Button chaos effects */
+@keyframes buttonBounce {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-5px) scale(1.05);
+  }
+}
+
+.button-chaos:hover {
+  animation: buttonBounce 0.5s ease-in-out infinite;
+}
+
+/* Mystery link effects */
+@keyframes mysteryPulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+.mystery-link:hover {
+  animation: mysteryPulse 1s ease-in-out infinite;
+}
+
+/* Glitch mode effect */
+@keyframes glitchEffect {
+  0% {
+    transform: translate(0);
+    filter: hue-rotate(0deg);
+  }
+  10% {
+    transform: translate(-5px, 5px);
+    filter: hue-rotate(90deg);
+  }
+  20% {
+    transform: translate(5px, -5px);
+    filter: hue-rotate(180deg);
+  }
+  30% {
+    transform: translate(-5px, -5px);
+    filter: hue-rotate(270deg);
+  }
+  40% {
+    transform: translate(5px, 5px);
+    filter: hue-rotate(360deg);
+  }
+  50% {
+    transform: translate(0);
+    filter: hue-rotate(0deg);
+  }
+}
+
+.glitch-mode {
+  animation: glitchEffect 0.2s ease-in-out;
+}
+
+/* Hover section effects */
+.hover-section {
+  transition: all 0.3s ease;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.hover-section:hover {
+  background: hsl(var(--muted));
+  transform: translateX(10px);
+}
+
+/* Mystery hover links */
+.mystery-hover {
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.mystery-hover:hover {
+  transform: scale(1.1);
+  font-weight: 600;
+}
+
+/* Confetti celebration system */
+.confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: hsl(var(--foreground));
+  animation: confettiFall 4s linear forwards;
+  top: -10%;
+}
+
+.confetti-piece:nth-child(2n) {
+  width: 8px;
+  height: 8px;
+  background: hsl(var(--muted-foreground));
+}
+
+.confetti-piece:nth-child(3n) {
+  width: 6px;
+  height: 6px;
+  background: hsl(var(--accent));
+}
+
+.confetti-piece:nth-child(4n) {
+  width: 12px;
+  height: 12px;
+}
+
+.confetti-piece:nth-child(5n) {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+/* Celebration mode animation */
+@keyframes celebrate {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.2) rotate(-5deg);
+  }
+  50% {
+    transform: scale(0.9) rotate(5deg);
+  }
+  75% {
+    transform: scale(1.1) rotate(-3deg);
+  }
+}
+
+.celebration-mode {
+  animation: celebrate 1s ease-in-out infinite;
+}
+
+/* Achievement popup */
+.achievement-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: hsl(var(--foreground));
+  color: hsl(var(--background));
+  padding: 2rem 3rem;
+  border: 4px solid hsl(var(--background));
+  text-align: center;
+  z-index: 10000;
+  font-family: var(--font-geist-mono);
+  animation: achievementAppear 0.5s ease-out;
+}
+
+@keyframes achievementAppear {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5) rotate(-180deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+  }
+}
+
+/* Chaos link effects */
+.chaos-link {
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.chaos-link:hover {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ============================================
    MOBILE RESPONSIVENESS - Dramatic Scaling
    Typography and spacing adapt dramatically for mobile
    ============================================ */
