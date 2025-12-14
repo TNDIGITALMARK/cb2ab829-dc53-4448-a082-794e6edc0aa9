@@ -2,14 +2,29 @@ export const dynamic = 'force-dynamic'
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">404 - Page Not Found</h1>
-        <p className="text-xl mb-4">The page you are looking for does not exist.</p>
-        <a href="/" className="text-blue-500 hover:text-blue-700 underline">
-          Return to Home
-        </a>
-      </div>
+    <div className="min-h-screen flex flex-col items-center justify-center px-4">
+      <div className="spacing-lg" />
+
+      <h1 className="text-center animate-fade-in">
+        404
+      </h1>
+
+      <div className="spacing-sm" />
+
+      <h2 className="text-center text-muted-foreground animate-fade-in">
+        This page doesn't exist. Neither does 6-7. But here we are.
+      </h2>
+
+      <div className="spacing-md" />
+
+      <a
+        href="/"
+        className="text-body text-foreground hover:text-muted-foreground transition-colors duration-200"
+      >
+        ← Back to wherever
+      </a>
+
+      <div className="spacing-lg" />
     </div>
-  );
+  )
 }

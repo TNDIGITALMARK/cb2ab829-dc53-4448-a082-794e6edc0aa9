@@ -19,8 +19,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Elegant Flora Boutique",
-  description: "Beautiful AI-powered website creation platform",
+  title: "6-7 | If you know, you know",
+  description: "A viral meme-driven landing page that commits fully to the bit. Pure minimalism, absurd simplicity, internet-native humor.",
 };
 
 export default function RootLayout({

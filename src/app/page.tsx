@@ -1,37 +1,59 @@
 export const dynamic = 'force-dynamic'
 
-export default function Index() {
+export default function HeroPage() {
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <div className="text-center max-w-2xl px-4">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your App</h1>
-        <p className="text-xl mb-6 text-gray-600">
-          This template is configured to be absolutely lenient - builds never fail on validation errors.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-left">
-          <div className="p-4 bg-green-50 rounded-lg border border-green-200">
-            <h3 className="font-semibold text-green-800 mb-2">✅ Always Builds</h3>
-            <ul className="text-green-700 space-y-1">
-              <li>• TypeScript errors ignored</li>
-              <li>• ESLint warnings ignored</li>
-              <li>• Global error boundaries</li>
-              <li>• Asset type safety</li>
-            </ul>
-          </div>
-          <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
-            <h3 className="font-semibold text-blue-800 mb-2">🚀 Production Ready</h3>
-            <ul className="text-blue-700 space-y-1">
-              <li>• Next.js 15.5.2 App Router</li>
-              <li>• Vercel optimized</li>
-              <li>• SSR/SEO friendly</li>
-              <li>• Browser API protection</li>
-            </ul>
-          </div>
+    <div className="min-h-screen flex flex-col items-center justify-center px-4 relative">
+      {/* Massive 6-7 headline - the star of the show */}
+      <div className="spacing-md" />
+
+      <h1 className="text-center animate-fade-in">
+        6-7
+      </h1>
+
+      <div className="spacing-sm" />
+
+      {/* Deadpan subheading */}
+      <h2 className="text-center text-muted-foreground animate-fade-in opacity-80">
+        If you know, you know.
+      </h2>
+
+      <div className="spacing-md" />
+
+      {/* Minimal email capture - intentionally simple */}
+      <form
+        action="/waitlist"
+        method="GET"
+        className="w-full max-w-md animate-fade-in"
+      >
+        <div className="flex flex-col sm:flex-row gap-4">
+          <input
+            type="email"
+            name="email"
+            placeholder="your_email_here_obviously"
+            required
+            className="flex-1 px-6 py-4 text-center sm:text-left"
+            aria-label="Email address"
+          />
+          <button
+            type="submit"
+            className="px-8 py-4 bg-primary text-primary-foreground hover:bg-secondary hover:text-secondary-foreground transition-colors duration-200"
+          >
+            Join the 67
+          </button>
         </div>
-        <p className="mt-6 text-gray-500">
-          Start building your amazing project here! This template will never fail builds due to validation errors.
-        </p>
-      </div>
+      </form>
+
+      <div className="spacing-md" />
+
+      {/* Subtle navigation link */}
+      <a
+        href="/about"
+        className="text-small text-muted-foreground hover:text-foreground transition-colors duration-200"
+      >
+        What is this?
+      </a>
+
+      <div className="spacing-sm" />
     </div>
-  );
+  )
 }
